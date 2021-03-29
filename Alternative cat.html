@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cat-Owner Survey</title>
+</head>
+<style>
+
+body {
+  font-family: helvetica;
+  color: black;
+  font-weight: bold;
+  background-image:
+  url(https://images.pexels.com/photos/821736/pexels-photo-821736.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: lightgreen;
+ }
+  label {
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  }
+.description {
+  font-style: italic;
+  font-weight: 200;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  }
+.tick {
+  margin-left: 0.25rem;
+  font-size: 0.9rem;
+  }
+.text-center {
+  text-align: center;
+  }
+.input-radio,
+.input-checkbox {
+  display: inline-block;
+  margin-right: 0.625rem;
+  min-height: 1.25rem;
+  min-width: 1.25rem;
+  }
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background:darkgreen;
+  color:white;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top:3px;
+  margin-bottom: 10px;
+  }
+.submit-button:hover{
+  background-color:lightgreen;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+.container {
+  width: 100%;
+  margin: 3.125rem auto 0 auto;
+  }  
+.header {
+  padding: 0 0.625rem;
+  margin-bottom: 1.875rem;
+}
+.input-textarea {
+  min-height:120px;
+  width: 97%;
+  padding:0.625rem;
+  resize: vertical;
+}
+.transbox {
+margin: auto;
+border: 1px solid black;
+padding: 5px;
+background: rgba(204, 204, 204, 0.5);
+}
+
+</style>
+<body>
+<div class="container transbox">
+  <header class="header">
+  <h1 id="title" class="text-center">Cat-Owner Survey Form</h1>
+  <p id="description" class="description text-center">Tell us about your cat to receive personalised advice</p>
+ </header>
+ <form id="survey-form">
+    <div class="form-group">
+      <label id="name-label"
+    for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="form-control"
+            placeholder="Enter your name here"
+            required
+          />
+      </div>
+      <div class="form-group">
+        <label id="email-label"
+    for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="form-control"
+            placeholder="Enter your Email here"
+            required
+          />
+      </div>
+      <div class="form-group">
+        <label id="cat-name-label"
+    for="cat-name">Your cat's name</label>
+        <input
+          type="text"
+          name="cat-name"
+          id="cat-name"
+          class="form-control"
+          placeholder="Enter your cat's name here"
+          required
+        /> 
+      </div>
+      <div class="form-group">
+        <label id="number-label"
+    for="number"
+            >Your cat's age<span class="tick">
+    (optional)</span></label>
+        <input
+          type="number"
+          name="cat-age"
+          id="number"
+          min="1"
+          max="20"
+          class="form-control"
+          placeholder="Age"
+        />
+      </div>
+      
+      <div class="form-group">
+        <p>My cat is:</p>
+          <select id="dropdown"
+      name="gender" class="form-control"
+      required>
+              <option disabled selected value>Select cat's gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+      </select>
+      </div>
+      
+      <div class="form-group">
+        <p>Is your cat in good health?</p>
+          <label>
+          <input
+             name="healthy-cat"
+             value="healthy"
+             type="radio"
+             class="input-radio"
+             checked    
+           />Yes my cat is very well</label>
+            <label>
+            <input
+               name="some-probs"
+               value="mixed"
+               type="radio"
+               class="input-radio"
+             />My cat has some health issues, minor or controlled by medication</label>
+              <label>
+              <input
+                 name="poor-health"
+                 value="bad"
+                 type="radio"
+                 class="input-radio"
+              />My cat has major health conditions that affect daily life</label>
+    </div>
+    <div class="form-group">
+      <p>Which of these topics would you like to learn more about? <span class="tick">(Tick all that apply)</span></p>  
+           <label>
+           <input
+               name="topics"
+               value="feeding-and-nutrition"
+               type="checkbox"
+               class="input-checkbox"
+             />Feeding and Nutrition</label>
+             <label>
+             <input
+                name="topics"
+                value="grooming"
+                type="checkbox"
+                class="input-checkbox"
+              />Grooming</label>
+              <label>    
+              <input
+                 name="topics"
+                 value="flea-and-worm-treatments"   
+                 type="checkbox"
+                 class="input-checkbox"
+               />Flea and Worm Treatments</label>
+               <label>
+               <input
+                   name="topics"
+                   value="playing-and-exercise"
+                   type="checkbox"
+                   class="input-checkbox"
+                />Playing and Exercise</label>           
+        </div>
+        
+    <div class="form-group">
+      <p>Please provide any further details about your cat.</p>      
+      <textarea class="input-textarea" 
+      id="comments" 
+      name="comment"
+        placeholder="Enter your comment here..."></textarea>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" id="submit" class="submit-button">Submit</button>
+    </div>
+</form>
+</div>
+</body>
+</html>
